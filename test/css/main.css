@@ -1,0 +1,123 @@
+/*
+  Oh Hello!
+  These are some base styles so that our tutorial looks good.
+  Let's go through the important bits real quick
+*/
+
+/* These are colors we're use */
+:root {
+  --lightgray: #dfdfdf;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/*
+  WAT IS THIS?!
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+.logo {
+  display: block;
+  padding: 0.2rem;
+  max-width: 100%;
+}
+
+
+
+
+.nav-bar {
+  list-style: none;
+  margin: 0;
+  padding:0.2rem;
+  text-transform: uppercase;
+  display: grid;
+  grid-template-columns: repeat(4, fit-content(100%));
+  grid-template-rows: 5rem;
+  grid-gap: 0.3rem;
+  justify-content: end;
+}
+
+.nav-bar__item {
+  display: block;
+  padding: 0.2rem;
+  align-self: center;
+}
+
+
+
+
+
+
+.slider {
+  display:inline-block;
+  position: relative; 
+  top: 0%; 
+  left: 0%; 
+  width: 200%; 
+  height: 10rem;
+}
+
+.slider img {
+  position: relative; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+
+
+/**
+* USE CSS GRID BELOW
+**/
+.container {
+  max-width: 75rem;
+  margin: auto;
+  padding: 0 1rem;
+
+  display: grid;
+  grid-gap: 0.3rem;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: minmax(3rem, auto);
+  /* border: solid black 2px; */
+}
+
+.item {
+  display: block;
+  overflow: hidden;
+  float: left;
+  margin-bottom: 0.3rem;
+}
+
+.item--1of3 {
+  grid-column-start: span 1;
+  /* background: var(--lightgray); */
+}
+
+.item--2of3 {
+  grid-column-start: span 2;
+  /* background: pink; */
+}
+
+.item--3of3 {
+  grid-column-start: span 3;
+  /* background: green; */
+}
